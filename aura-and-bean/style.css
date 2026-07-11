@@ -553,6 +553,7 @@ img { max-width: 100%; display: block; }
 .form-group textarea::placeholder { color: var(--text-muted); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 .form-group select { appearance: none; cursor: pointer; }
+.form-group select option { color: #1a0f0a; background: #f5f0eb; }
 .form-feedback { font-size: 0.85rem; color: var(--gold); min-height: 24px; }
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
