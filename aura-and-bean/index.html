@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura &amp; Bean — Custom Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .scroll-section {
+      position: relative;
+      height: 600vh;
+    }
+    .scroll-canvas-wrap {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+    .scroll-canvas-wrap canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .scroll-texts {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .scroll-text {
+      position: absolute;
+      text-align: center;
+      max-width: 520px;
+      padding: 0 24px;
+      opacity: 0;
+      transition: opacity 0.1s ease, transform 0.1s ease;
+      will-change: opacity, transform;
+    }
+    .scroll-text .st-label {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+      border: 1px solid rgba(212, 163, 115, 0.15);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .scroll-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .scroll-text p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .scroll-progress {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 235, 0.3);
+    }
+    .scroll-progress-bar {
+      width: 120px;
+      height: 1px;
+      background: rgba(245, 240, 235, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .scroll-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--gold);
+      transition: width 0.1s linear;
+    }
+    .hero-home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(212, 163, 115, 0.04), transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(60, 34, 24, 0.2), transparent 50%);
+      pointer-events: none;
+    }
+    .hero-home-inner { position: relative; z-index: 1; max-width: 720px; }
+    .hero-home-inner .hero-badge {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-home-inner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero-home-inner h1 span { font-style: italic; color: var(--gold); }
+    .hero-home-inner p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(245, 240, 235, 0.2);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      animation: floatDown 2s ease-in-out infinite;
+    }
+    .hero-scroll-indicator::after {
+      content: '';
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    @keyframes floatDown {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+    @media (max-width: 768px) {
+      .hero-home-inner h1 { font-size: 2.8rem; }
+      .scroll-text h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://www.nixon-studio.com" target="_blank" class="nixon-badge">Nixon Template — Custom Plan</a>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <span class="header-mark">A&amp;B</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-link active">Home</a>
+        <a href="story.html" class="header-link">Our Story</a>
+        <a href="menu.html" class="header-link">Menu</a>
+        <a href="roastery.html" class="header-link">Roastery</a>
+        <a href="reservations.html" class="header-link">Reservations</a>
+        <a href="contact.html" class="header-link">Contact</a>
+      </nav>
+      <button class="header-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-home">
+    <div class="hero-home-inner">
+      <div class="hero-badge reveal">Est. 2026</div>
+      <h1 class="reveal">Aura <span>&amp;</span> Bean</h1>
+      <p class="reveal">Where the art of specialty coffee meets the warmth of shared moments. Crafted cup by cup, in the heart of the city.</p>
+      <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="menu.html" class="btn btn-primary">Explore the Menu</a>
+        <a href="#scrollSection" class="btn btn-outline">The Art of the Pour</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">Scroll to explore</div>
+  </section>
+
+  <!-- SCROLLYTELLING -->
+  <section class="scroll-section" id="scrollSection">
+    <div class="scroll-canvas-wrap">
+      <canvas id="scrollCanvas"></canvas>
+      <div class="scroll-texts">
+        <div class="scroll-text" data-start="0" data-end="0.15">
+          <span class="st-label">Chapter I</span>
+          <h2>The first drop</h2>
+          <p>It begins with a single bean, carefully selected from the highlands of Ethiopia. Every pour tells a story of origin, patience, and craft.</p>
+        </div>
+        <div class="scroll-text" data-start="0.15" data-end="0.3">
+          <span class="st-label">Chapter II</span>
+          <h2>The extraction</h2>
+          <p>Water meets grounds at precisely 93°C. The pressure builds. Rich crema forms as the first dark rivulets emerge — liquid gold in motion.</p>
+        </div>
+        <div class="scroll-text" data-start="0.3" data-end="0.5">
+          <span class="st-label">Chapter III</span>
+          <h2>The bloom</h2>
+          <p>Steam rises as the espresso fills the cup. Aroma compounds unfold — chocolate, stone fruit, a whisper of jasmine. This is the scent of morning.</p>
+        </div>
+        <div class="scroll-text" data-start="0.5" data-end="0.7">
+          <span class="st-label">Chapter IV</span>
+          <h2>The milk &amp; canvas</h2>
+          <p>Velvet-smooth microfoam cascades into the brew. The barista's hand guides the pour — steady, intentional, practiced over thousands of cups.</p>
+        </div>
+        <div class="scroll-text" data-start="0.7" data-end="0.9">
+          <span class="st-label">Chapter V</span>
+          <h2>The art revealed</h2>
+          <p>A rosetta forms on the surface. No two patterns are exactly alike — each cup a unique collaboration between the barista, the bean, and the moment.</p>
+        </div>
+        <div class="scroll-text" data-start="0.9" data-end="1">
+          <span class="st-label">The finished cup</span>
+          <h2>Made for you</h2>
+          <p>From the first sip to the last, this is what we do. Welcome to Aura &amp; Bean. Your table is ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress">
+    <span>The Pour</span>
+    <div class="scroll-progress-bar">
+      <div class="scroll-progress-fill" id="progressFill"></div>
+    </div>
+    <span id="progressPct">0%</span>
+  </div>
+
+  <!-- MENU PREVIEW -->
+  <section class="section section-cream" id="menuPreviewSection">
+    <div class="section-inner">
+      <div class="section-header centered reveal">
+        <span class="section-label">Signature Offerings</span>
+        <h2>A curated selection</h2>
+        <p class="section-desc">From classic espresso to seasonal specialties, each drink is made to order with precision and care.</p>
+      </div>
+      <div class="grid-3 reveal">
+        <div class="menu-item" style="flex-direction:column;border:none;padding:0;gap:12px;text-align:center">
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--roast);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.8rem">☕</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Classic Espresso</h3>
+          <p style="font-size:0.82rem;color:var(--roast-medium);opacity:0.7">Single-origin Ethiopian beans, pulled to perfection.</p>
+          <span style="font-family:'Playfair Display',serif;color:var(--roast-medium);font-weight:600">$4.50</span>
+        </div>
+        <div class="menu-item" style="flex-direction:column;border:none;padding:0;gap:12px;text-align:center">
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--roast);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.8rem">🥛</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Signature Latte</h3>
+          <p style="font-size:0.82rem;color:var(--roast-medium);opacity:0.7">Double shot with silky oat milk and house-made vanilla.</p>
+          <span style="font-family:'Playfair Display',serif;color:var(--roast-medium);font-weight:600">$6.00</span>
+        </div>
+        <div class="menu-item" style="flex-direction:column;border:none;padding:0;gap:12px;text-align:center">
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--roast);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.8rem">🍂</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Seasonal Pour-Over</h3>
+          <p style="font-size:0.82rem;color:var(--roast-medium);opacity:0.7">Rotating single-origin, brewed to highlight origin character.</p>
+          <span style="font-family:'Playfair Display',serif;color:var(--roast-medium);font-weight:600">$7.00</span>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:48px">
+        <a href="menu.html" class="btn" style="background:var(--roast-medium);color:var(--cream)">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Aura &amp; Bean</div>
+          <p class="footer-desc">Specialty coffee crafted with intention. Every cup tells a story — from bean to brew to your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="story.html">Our Story</a>
+          <a href="menu.html">Menu</a>
+          <a href="roastery.html">Roastery</a>
+          <a href="reservations.html">Reservations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <a>Mon–Fri: 6:30 AM – 8:00 PM</a>
+          <a>Sat–Sun: 7:00 AM – 9:00 PM</a>
+          <a>Holiday hours may vary</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a>42 Grind Avenue</a>
+          <a>Portland, OR 97201</a>
+          <a href="contact.html">Get Directions</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura &amp; Bean. Template reference for Nixon Studio Custom Plan.</span>
+        <span>Nixon Studio — nixon-studio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    /* Update progress bar from canvas progress */
+    setInterval(() => {
+      const p = window.__scrollyProgress ? window.__scrollyProgress() : 0;
+      const fill = document.getElementById('progressFill');
+      const pct = document.getElementById('progressPct');
+      if (fill) fill.style.width = (p * 100) + '%';
+      if (pct) pct.textContent = Math.round(p * 100) + '%';
+    }, 100);
+  </script>
+</body>
+</html>

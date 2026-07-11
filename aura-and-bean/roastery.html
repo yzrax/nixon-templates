@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Roastery — Aura &amp; Bean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <a href="https://www.nixon-studio.com" target="_blank" class="nixon-badge">Nixon Template — Custom Plan</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <span class="header-mark">A&amp;B</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-link">Home</a>
+        <a href="story.html" class="header-link">Our Story</a>
+        <a href="menu.html" class="header-link">Menu</a>
+        <a href="roastery.html" class="header-link active">Roastery</a>
+        <a href="reservations.html" class="header-link">Reservations</a>
+        <a href="contact.html" class="header-link">Contact</a>
+      </nav>
+      <button class="header-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-label reveal">The Roastery</span>
+      <h1 class="reveal">Where beans become <span>extraordinary</span></h1>
+      <p class="reveal">Small-batch roasting that honors origin character. Every profile is developed through hundreds of cups and an unrelenting pursuit of flavor.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="grid-2 reveal">
+        <div>
+          <span class="section-label">Our Approach</span>
+          <h2 style="font-size:2rem;margin-bottom:16px">Craft over volume</h2>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:16px">We roast in small batches — never more than 30 kilograms at a time. Each batch is cupped, evaluated, and adjusted. Our goal is not consistency in the industrial sense, but consistency in quality: every roast should capture the unique character of its origin.</p>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8">Our roastery in Portland is open for tours every Saturday. Guests can watch the roasting process, participate in a cupping session, and purchase freshly roasted beans to take home.</p>
+        </div>
+        <div style="height:400px;background:var(--espresso-light);display:flex;align-items:center;justify-content:center;border-radius:var(--radius-lg);position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 16px,rgba(212,163,115,0.02) 16px,rgba(212,163,115,0.02) 17px)"></div>
+          <span style="font-family:'Playfair Display',serif;font-size:4rem;font-weight:700;color:rgba(212,163,115,0.06);z-index:1">ROAST</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header centered reveal">
+        <span class="section-label">Flavor Compass</span>
+        <h2>Find your blend</h2>
+        <p class="section-desc">Click a flavor note to discover the roast profile and origin that matches your palate.</p>
+      </div>
+      <div class="flavor-widget reveal">
+        <div class="flavor-note" data-flavor="fruity">
+          <div class="flavor-note-icon">🍇</div>
+          <h4>Fruity</h4>
+          <p>Bright, acidic, berry-forward</p>
+        </div>
+        <div class="flavor-note" data-flavor="nutty">
+          <div class="flavor-note-icon">🥜</div>
+          <h4>Nutty</h4>
+          <p>Smooth, balanced, comforting</p>
+        </div>
+        <div class="flavor-note" data-flavor="chocolatey">
+          <div class="flavor-note-icon">🍫</div>
+          <h4>Chocolatey</h4>
+          <p>Rich, deep, full-bodied</p>
+        </div>
+        <div class="flavor-note" data-flavor="floral">
+          <div class="flavor-note-icon">🌸</div>
+          <h4>Floral</h4>
+          <p>Delicate, aromatic, complex</p>
+        </div>
+        <div class="flavor-note" data-flavor="spicy">
+          <div class="flavor-note-icon">🌶️</div>
+          <h4>Spicy</h4>
+          <p>Warm, earthy, intriguing</p>
+        </div>
+        <div class="flavor-note" data-flavor="earthy">
+          <div class="flavor-note-icon">🌍</div>
+          <h4>Earthy</h4>
+          <p>Deep, grounding, classic</p>
+        </div>
+      </div>
+      <div class="flavor-result" id="flavorResult">
+        <p>Select a flavor note to discover your perfect blend.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header centered reveal">
+        <span class="section-label">Wholesale</span>
+        <h2>Partnership program</h2>
+        <p class="section-desc">We partner with cafés, restaurants, and offices to provide custom-roasted coffee tailored to their needs.</p>
+      </div>
+      <div class="grid-3 reveal">
+        <div style="text-align:center;padding:32px;border:1px solid var(--border);border-radius:var(--radius)">
+          <div style="font-size:2rem;margin-bottom:12px">🤝</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:8px">Custom Roast Profiles</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted)">We develop exclusive blends for your business, with ongoing support and adjustment.</p>
+        </div>
+        <div style="text-align:center;padding:32px;border:1px solid var(--border);border-radius:var(--radius)">
+          <div style="font-size:2rem;margin-bottom:12px">📦</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:8px">Flexible Delivery</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Weekly or bi-weekly shipments based on your volume. Minimum 10 lb commitment.</p>
+        </div>
+        <div style="text-align:center;padding:32px;border:1px solid var(--border);border-radius:var(--radius)">
+          <div style="font-size:2rem;margin-bottom:12px">📊</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:8px">Training &amp; Support</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Barista training, equipment consultation, and ongoing quality assurance visits.</p>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:40px">
+        <a href="contact.html" class="btn btn-primary">Inquire About Wholesale</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Aura &amp; Bean</div>
+          <p class="footer-desc">Specialty coffee crafted with intention. Every cup tells a story — from bean to brew to your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="story.html">Our Story</a>
+          <a href="menu.html">Menu</a>
+          <a href="roastery.html">Roastery</a>
+          <a href="reservations.html">Reservations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <a>Mon–Fri: 6:30 AM – 8:00 PM</a>
+          <a>Sat–Sun: 7:00 AM – 9:00 PM</a>
+          <a>Holiday hours may vary</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a>42 Grind Avenue</a>
+          <a>Portland, OR 97201</a>
+          <a href="contact.html">Get Directions</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura &amp; Bean. Template reference for Nixon Studio Custom Plan.</span>
+        <span>Nixon Studio — nixon-studio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

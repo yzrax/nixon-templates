@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Aura &amp; Bean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-locations {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .location-card {
+      background: rgba(245, 240, 235, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      transition: all var(--transition);
+    }
+    .location-card:hover { border-color: rgba(212, 163, 115, 0.2); transform: translateY(-2px); }
+    .location-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .location-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .location-card .loc-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212, 163, 115, 0.15);
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 768px) {
+      .contact-locations { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://www.nixon-studio.com" target="_blank" class="nixon-badge">Nixon Template — Custom Plan</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <span class="header-mark">A&amp;B</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-link">Home</a>
+        <a href="story.html" class="header-link">Our Story</a>
+        <a href="menu.html" class="header-link">Menu</a>
+        <a href="roastery.html" class="header-link">Roastery</a>
+        <a href="reservations.html" class="header-link">Reservations</a>
+        <a href="contact.html" class="header-link active">Contact</a>
+      </nav>
+      <button class="header-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-label reveal">Contact</span>
+      <h1 class="reveal">We'd love to <span>hear from you</span></h1>
+      <p class="reveal">Whether you're planning a visit, inquiring about wholesale, or just want to say hello — we're here.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-inner">
+      <div class="contact-locations reveal">
+        <div class="location-card">
+          <div class="loc-tag">Flagship</div>
+          <h3>Aura &amp; Bean Portland</h3>
+          <p>42 Grind Avenue<br />Portland, OR 97201</p>
+          <p style="margin-top:8px">Mon–Fri: 6:30 AM – 8:00 PM<br />Sat–Sun: 7:00 AM – 9:00 PM</p>
+        </div>
+        <div class="location-card">
+          <div class="loc-tag">Roastery</div>
+          <h3>Roastery &amp; Cupping Lab</h3>
+          <p>1701 SE Morrison Street<br />Portland, OR 97214</p>
+          <p style="margin-top:8px">Tours Saturdays at 10 AM &amp; 2 PM<br />By appointment only</p>
+        </div>
+        <div class="location-card">
+          <div class="loc-tag">Coming Soon</div>
+          <h3>Aura &amp; Bean Seattle</h3>
+          <p>1215 2nd Avenue<br />Seattle, WA 98101</p>
+          <p style="margin-top:8px">Opening late 2026<br />Stay tuned</p>
+        </div>
+      </div>
+
+      <div class="contact-split" style="min-height:auto;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden">
+        <div class="contact-map" style="min-height:400px;display:flex;align-items:center;justify-content:center;background:var(--espresso-light)">
+          <div class="contact-map-content">
+            <div class="map-icon">📍</div>
+            <h3>Find us</h3>
+            <p style="max-width:240px;margin:0 auto">42 Grind Avenue, Portland, OR<br />Corner of 3rd &amp; Morrison</p>
+            <div style="margin-top:20px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+              <span style="font-size:0.72rem;color:var(--text-muted);border:1px solid var(--border);padding:4px 10px;border-radius:4px">🚗 Street parking</span>
+              <span style="font-size:0.72rem;color:var(--text-muted);border:1px solid var(--border);padding:4px 10px;border-radius:4px">🚊 2 blocks from MAX</span>
+              <span style="font-size:0.72rem;color:var(--text-muted);border:1px solid var(--border);padding:4px 10px;border-radius:4px">🚲 Bike racks</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-panel" style="padding:60px 48px">
+          <h2>Send a message</h2>
+          <p>We typically respond within 24 hours.</p>
+          <form class="contact-form-side" style="gap:16px;margin-top:8px">
+            <div class="form-row-2">
+              <div class="form-group" style="margin:0">
+                <label>Name</label>
+                <input type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-group" style="margin:0">
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group" style="margin:0">
+              <label>Subject</label>
+              <select>
+                <option>General inquiry</option>
+                <option>Wholesale</option>
+                <option>Private event</option>
+                <option>Catering</option>
+                <option>Press</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin:0">
+              <label>Message</label>
+              <textarea rows="4" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-feedback"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" style="padding:60px 32px;text-align:center">
+    <div class="section-inner">
+      <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap">
+        <div><div style="font-family:'Playfair Display',serif;font-size:0.78rem;color:var(--text-muted);margin-bottom:4px">Phone</div><div style="font-size:0.9rem">(503) 555-0182</div></div>
+        <div><div style="font-family:'Playfair Display',serif;font-size:0.78rem;color:var(--text-muted);margin-bottom:4px">Email</div><div style="font-size:0.9rem">hello@auraandbean.com</div></div>
+        <div><div style="font-family:'Playfair Display',serif;font-size:0.78rem;color:var(--text-muted);margin-bottom:4px">Social</div><div style="font-size:0.9rem;color:var(--gold)">@auraandbean</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Aura &amp; Bean</div>
+          <p class="footer-desc">Specialty coffee crafted with intention. Every cup tells a story — from bean to brew to your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="story.html">Our Story</a>
+          <a href="menu.html">Menu</a>
+          <a href="roastery.html">Roastery</a>
+          <a href="reservations.html">Reservations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <a>Mon–Fri: 6:30 AM – 8:00 PM</a>
+          <a>Sat–Sun: 7:00 AM – 9:00 PM</a>
+          <a>Holiday hours may vary</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a>42 Grind Avenue</a>
+          <a>Portland, OR 97201</a>
+          <a href="contact.html">Get Directions</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura &amp; Bean. Template reference for Nixon Studio Custom Plan.</span>
+        <span>Nixon Studio — nixon-studio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story — Aura &amp; Bean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .parallax-block {
+      height: 400px;
+      background: var(--espresso-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .parallax-block::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23d4a373" stroke-width="0.3" opacity="0.05"/></svg>')
+        50% 50% / 120px 120px repeat;
+      pointer-events: none;
+    }
+    .parallax-block span {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: rgba(245, 240, 235, 0.15);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+    .story-aside {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .story-aside-label {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--gold);
+      position: sticky;
+      top: 100px;
+    }
+    .story-aside-content p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .story-aside { grid-template-columns: 1fr; }
+      .story-aside-label { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://www.nixon-studio.com" target="_blank" class="nixon-badge">Nixon Template — Custom Plan</a>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <span class="header-mark">A&amp;B</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-link">Home</a>
+        <a href="story.html" class="header-link active">Our Story</a>
+        <a href="menu.html" class="header-link">Menu</a>
+        <a href="roastery.html" class="header-link">Roastery</a>
+        <a href="reservations.html" class="header-link">Reservations</a>
+        <a href="contact.html" class="header-link">Contact</a>
+      </nav>
+      <button class="header-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-label reveal">Our Story</span>
+      <h1 class="reveal">From bean to cup, <span>a journey of purpose</span></h1>
+      <p class="reveal">Every coffee we serve has traveled thousands of miles, passed through careful hands, and been crafted with intention. This is the story behind it all.</p>
+    </div>
+  </section>
+
+  <div class="parallax-block"><span>Origin</span></div>
+
+  <section class="section">
+    <div class="section-inner narrow">
+      <div class="story-aside reveal">
+        <div class="story-aside-label">The beginning</div>
+        <div class="story-aside-content">
+          <p>Aura &amp; Bean began not with a business plan, but with a question: what if coffee could be more than a transaction? Our founder, Elias Vang, spent years traveling through Ethiopia, Colombia, and Guatemala — not as a tourist, but as a student. He sat with farmers, cupped hundreds of varietals, and learned what it takes to grow a truly exceptional bean.</p>
+          <p>What emerged was a philosophy: that great coffee is the product of relationships — between the farmer and the land, the roaster and the bean, the barista and the guest. Every cup we serve is a testament to those connections.</p>
+          <p>We opened our first café in Portland, Oregon in 2026. The space was intentionally small — thirty-six seats, a custom La Marzocco espresso machine, and a window where guests could watch every pour. We wanted transparency not as a marketing concept, but as a daily practice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="parallax-block"><span>Heritage</span></div>
+
+  <section class="section section-alt">
+    <div class="section-inner narrow">
+      <div class="section-header reveal">
+        <span class="section-label">Timeline</span>
+        <h2>Our journey</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-text">Elias Vang begins origin trips across East Africa, forming direct-trade partnerships with smallholder farms in Ethiopia and Kenya.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-text">The roastery is founded in a converted warehouse. The first experimental roast profile — a washed Yirgacheffe — sells out in three days.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-text">Partnerships expand to Colombia and Guatemala. The roasting program wins the Specialty Coffee Association's Rising Star award.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-text">The first Aura &amp; Bean café opens in Portland. Within six months, it becomes a gathering place for coffee enthusiasts, creatives, and the local community.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream" style="text-align:center">
+    <div class="section-inner narrow">
+      <div class="reveal">
+        <span class="section-label">Philosophy</span>
+        <h2 style="font-size:2rem">"Coffee is a conversation between the land, the hands that tend it, and the person who takes the first sip."</h2>
+        <p style="margin-top:24px;color:var(--roast-medium);opacity:0.7">— Elias Vang, Founder</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Aura &amp; Bean</div>
+          <p class="footer-desc">Specialty coffee crafted with intention. Every cup tells a story — from bean to brew to your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="story.html">Our Story</a>
+          <a href="menu.html">Menu</a>
+          <a href="roastery.html">Roastery</a>
+          <a href="reservations.html">Reservations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <a>Mon–Fri: 6:30 AM – 8:00 PM</a>
+          <a>Sat–Sun: 7:00 AM – 9:00 PM</a>
+          <a>Holiday hours may vary</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a>42 Grind Avenue</a>
+          <a>Portland, OR 97201</a>
+          <a href="contact.html">Get Directions</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura &amp; Bean. Template reference for Nixon Studio Custom Plan.</span>
+        <span>Nixon Studio — nixon-studio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Aura &amp; Bean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .menu-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .menu-column { min-width: 0; }
+    .menu-category { margin-bottom: 40px; }
+    .menu-category h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .menu-category > p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .menu-layout { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://www.nixon-studio.com" target="_blank" class="nixon-badge">Nixon Template — Custom Plan</a>
+
+  <img id="menuPreview" class="hover-img-preview" alt="Preview" />
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <span class="header-mark">A&amp;B</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-link">Home</a>
+        <a href="story.html" class="header-link">Our Story</a>
+        <a href="menu.html" class="header-link active">Menu</a>
+        <a href="roastery.html" class="header-link">Roastery</a>
+        <a href="reservations.html" class="header-link">Reservations</a>
+        <a href="contact.html" class="header-link">Contact</a>
+      </nav>
+      <button class="header-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-label reveal">The Menu</span>
+      <h1 class="reveal">Crafted to <span>inspire</span></h1>
+      <p class="reveal">Every item on our menu is made from scratch, using ingredients sourced with the same care as our coffee.</p>
+    </div>
+  </section>
+
+  <div class="section" style="padding-top:0">
+    <div class="section-inner">
+      <div class="tabs-nav reveal">
+        <button class="tab-btn active" data-tab="coffee">Coffee</button>
+        <button class="tab-btn" data-tab="tea">Tea</button>
+        <button class="tab-btn" data-tab="pastries">Pastries</button>
+        <button class="tab-btn" data-tab="brunch">Brunch</button>
+      </div>
+
+      <div id="coffee" class="tab-content active reveal">
+        <div class="menu-layout">
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>Espresso</h3>
+              <p>Single or double, pulled to order</p>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Classic Espresso</h3><p>Single-origin Ethiopian, 18g dose, 36g yield</p></div>
+                <span class="menu-item-price">$4.50</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Double Espresso</h3><p>Our signature double shot, pulled long</p></div>
+                <span class="menu-item-price">$5.50</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Macchiato</h3><p>Espresso with a dollop of velvety foam</p></div>
+                <span class="menu-item-price">$4.75</span>
+              </div>
+            </div>
+            <div class="menu-category">
+              <h3>Filter</h3>
+              <p>Single-origin, brewed to order</p>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Pour-Over</h3><p>Rotating single-origin, V60 brew</p></div>
+                <span class="menu-item-price">$7.00</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>AeroPress</h3><p>Clean, bright, full-bodied</p></div>
+                <span class="menu-item-price">$6.50</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Cold Brew</h3><p>24-hour steep, smooth and rich</p></div>
+                <span class="menu-item-price">$6.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>Milk &amp; More</h3>
+              <p>House-made syrups, oat, almond, and whole milk</p>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Signature Latte</h3><p>Double shot, oat milk, house vanilla</p></div>
+                <span class="menu-item-price">$6.00</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Cappuccino</h3><p>Perfect 1:1:1 ratio, dry or wet</p></div>
+                <span class="menu-item-price">$5.75</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Flat White</h3><p>Double ristretto, thin microfoam</p></div>
+                <span class="menu-item-price">$5.75</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Mocha</h3><p>House chocolate ganache, espresso, steamed milk</p></div>
+                <span class="menu-item-price">$6.50</span>
+              </div>
+              <div class="menu-item" data-preview="">
+                <div class="menu-item-info"><h3>Lavender Latte</h3><p>Espresso, oat milk, lavender honey syrup</p></div>
+                <span class="menu-item-price">$6.75</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tea" class="tab-content reveal">
+        <div class="menu-layout">
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>Loose Leaf</h3>
+              <p>Sourced from artisan growers</p>
+              <div class="menu-item"><div class="menu-item-info"><h3>Jasmine Silver Needle</h3><p>White tea, floral, delicate</p></div><span class="menu-item-price">$5.50</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Earl Grey</h3><p>Bergamot, citrus notes</p></div><span class="menu-item-price">$4.50</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Matcha Latte</h3><p>Ceremonial grade, oat milk</p></div><span class="menu-item-price">$6.50</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Chai Latte</h3><p>House-spiced, honey sweetened</p></div><span class="menu-item-price">$6.00</span></div>
+            </div>
+          </div>
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>Herbal</h3>
+              <p>Caffeine-free infusions</p>
+              <div class="menu-item"><div class="menu-item-info"><h3>Chamomile Lavender</h3><p>Calming, floral</p></div><span class="menu-item-price">$4.50</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Peppermint</h3><p>Fresh, invigorating</p></div><span class="menu-item-price">$4.00</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Ginger Turmeric</h3><p>Warming, earthy</p></div><span class="menu-item-price">$4.50</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pastries" class="tab-content reveal">
+        <div class="menu-layout">
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>Baked Fresh Daily</h3>
+              <p>From our in-house pastry kitchen</p>
+              <div class="menu-item"><div class="menu-item-info"><h3>Croissant</h3><p>Classic butter, 72-hour laminated dough</p></div><span class="menu-item-price">$5.00</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Almond Croissant</h3><p>Frangipane filling, toasted almonds</p></div><span class="menu-item-price">$6.00</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Cinnamon Roll</h3><p>Brown butter glaze, house caramel</p></div><span class="menu-item-price">$5.50</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Morning Bun</h3><p>Orange zest, vanilla bean, pearl sugar</p></div><span class="menu-item-price">$4.75</span></div>
+            </div>
+          </div>
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>Sweet &amp; Savory</h3>
+              <div class="menu-item"><div class="menu-item-info"><h3>Biscuit &amp; Jam</h3><p>Buttermilk biscuit, seasonal preserves</p></div><span class="menu-item-price">$4.50</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Ham &amp; Cheese Scone</h3><p>Gruyère, black pepper honey</p></div><span class="menu-item-price">$5.50</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Brown Butter Cookie</h3><p>Sea salt, dark chocolate chips</p></div><span class="menu-item-price">$3.50</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="brunch" class="tab-content reveal">
+        <div class="menu-layout">
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>Morning Plates</h3>
+              <p>Served until 2:00 PM</p>
+              <div class="menu-item"><div class="menu-item-info"><h3>Avocado Toast</h3><p>Sourdough, smashed avocado, chili flake, lime</p></div><span class="menu-item-price">$12.00</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Shakshuka</h3><p>Poached eggs, spiced tomato, crusty bread</p></div><span class="menu-item-price">$14.00</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Granola Bowl</h3><p>House granola, Greek yogurt, seasonal fruit</p></div><span class="menu-item-price">$11.00</span></div>
+            </div>
+          </div>
+          <div class="menu-column">
+            <div class="menu-category">
+              <h3>To Share</h3>
+              <div class="menu-item"><div class="menu-item-info"><h3>Pastry Basket</h3><p>Selection of 3 pastries, house jam, butter</p></div><span class="menu-item-price">$12.00</span></div>
+              <div class="menu-item"><div class="menu-item-info"><h3>Cheese Board</h3><p>Local cheeses, honeycomb, crackers, dried fruit</p></div><span class="menu-item-price">$18.00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Aura &amp; Bean</div>
+          <p class="footer-desc">Specialty coffee crafted with intention. Every cup tells a story — from bean to brew to your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="story.html">Our Story</a>
+          <a href="menu.html">Menu</a>
+          <a href="roastery.html">Roastery</a>
+          <a href="reservations.html">Reservations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <a>Mon–Fri: 6:30 AM – 8:00 PM</a>
+          <a>Sat–Sun: 7:00 AM – 9:00 PM</a>
+          <a>Holiday hours may vary</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a>42 Grind Avenue</a>
+          <a>Portland, OR 97201</a>
+          <a href="contact.html">Get Directions</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura &amp; Bean. Template reference for Nixon Studio Custom Plan.</span>
+        <span>Nixon Studio — nixon-studio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
